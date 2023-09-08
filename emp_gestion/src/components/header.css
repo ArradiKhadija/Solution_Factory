@@ -1,0 +1,14 @@
+/* styles.css (ou votre fichier de style) */
+
+#haut {
+    position: fixed; /* Fixe l'en-tête en haut de la page */
+    top: 0; /* Place l'en-tête en haut de la fenêtre du navigateur */
+    left: 0;
+    right: 0;
+    background-color: #333; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    
+    
+    
+  }
+  

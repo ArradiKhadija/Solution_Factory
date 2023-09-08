@@ -1,0 +1,29 @@
+
+
+/* Slider.css */
+/* Slider.css */
+.control_dots {
+    /* Your custom styles here */
+    height: 10px;
+    /* Other styles... */
+  }
+  
+.axis-vertical{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Slider.css */
+
+  
+
+.carousel-slider{
+    /* Vos styles personnalisés ici */
+    height: 620px;
+    
+    /* Autres styles... */
+  }
+
+  

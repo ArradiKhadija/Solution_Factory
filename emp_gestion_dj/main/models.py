@@ -39,7 +39,7 @@ class Vacation(models.Model):
 class Equipe(models.Model):
     id_eq = models.AutoField(primary_key=True)
     nom_eq = models.CharField(max_length=200, null=True, default="non renseigné")
-    resp_eq = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    resp_eq = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True)
     start_eq = models.DateField(max_length=200, null=True, default="non renseigné")
     project_run = models.CharField(max_length=200, null=True, default="L'équipe vient de débuter récemment")
     emp_eq = models.ManyToManyField(Employee, related_name='equipes', blank=True)

@@ -11,10 +11,12 @@ import AddTribes from './components/tribes/AddTribes';
 import AddCongé from './components/congé/AddCongé';
 import ListTribes from './components/tribes/ListTribes';
 import UpdateTribes from './components/tribes/UpdateTribes';
-import Footer from './components/Footer';
 import {Helmet} from "react-helmet";
 import ListCongés from './components/congé/ListCongé';
 import UpdateCongé from './components/congé/UpdateCongé';
+import AddEquipe from './components/équipe/AddEquipe';
+import ListEquipe from './components/équipe/ListEquipe';
+import UpdateEquipe from './components/équipe/UpdateEquipe'
 /*
 on doit creer les fichier:
 -list
@@ -45,6 +47,9 @@ function App() {
         <Route path="/add_congés" component={AddCongé}/>
         <Route path="/list_congés" component={ListCongés}/>
         <Route path="/update_congé/:id" component={UpdateCongé}/>
+        <Route path="/add_équipe" component={AddEquipe}/>
+        <Route path="/list_équipes" component={ListEquipe}/>
+        <Route path="/update_équipe/:id" component={UpdateEquipe}/>        
       </Switch>
       
       </div> 

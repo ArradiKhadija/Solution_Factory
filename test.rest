@@ -15,3 +15,21 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/test_token 
 Content-Type: application/json
 Authorization: token 0ffea653a2b27ca50b32f132524e78aa76f5fb9d
+
+
+
+###
+
+POST http://127.0.0.1:8000/team/
+Content-Type: application/json
+
+    {
+        "id_eq":4,
+        "nom_eq": "non renseigné",
+        "resp_eq": 88,
+        "start_eq": "2023-09-04",
+        "project_run": "L'équipe vient de débuter récemment",
+        "emp_eq": [
+            89, 90
+        ]
+    }

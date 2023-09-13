@@ -69,7 +69,7 @@ class UpdateCongé extends React.Component{
                 <Header />
                 <div id='page'>
                 <div style={{ paddingBottom:'140px',paddingTop:'50px', paddingLeft:'400px', paddingRight :'400px',textAlign: 'center'}}>
-                    <h2 >Formulaire d'ajout d'un Congé après la reception d'une demande et l'approbation du Directeur SI:</h2>
+                    <h2 >Formulaire modification d'un Congé après la reception d'une demande et l'approbation du Directeur SI:</h2>
                     <br/>
                     <form className="table table-striped table-bordered text-center " >
                     

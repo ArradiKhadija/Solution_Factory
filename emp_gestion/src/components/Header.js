@@ -28,14 +28,18 @@ return(
         </li>   
         <li className="nav-item active">
           <Link className="nav-link" to="/list_congés"><b style={{fontSize:'20px'}}>Congés</b> <span className="sr-only">(current)</span></Link>
-        </li>   
+        </li>  
+
+        <li className="nav-item active">
+          <Link className="nav-link" to="/list_équipes"><b style={{fontSize:'20px'}}>Equipes</b> <span className="sr-only">(current)</span></Link>
+        </li>          
                
         <li className="nav-item">
           <a className="nav-link" href="https://sanlam.ma/fr/"><b style={{fontSize:'20px'}}>infos</b></a>
         </li> 
          
         <li className="nav-item active">
-          <Link className="nav-link btn btn-primary" to="/" style={{ marginLeft: '350px', color: 'white', fontSize: '16px' }}>
+          <Link className="nav-link btn btn-primary" to="/" style={{ marginLeft: '300px', color: 'white', fontSize: '16px' }}>
            <b> logout </b><span className="sr-only">(current)</span>
           </Link>
         </li>        

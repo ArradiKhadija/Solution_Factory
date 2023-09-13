@@ -88,7 +88,7 @@ class ListTribes extends React.Component{
           <th scope="row">{trb.id_trb}</th>
           <td>{trb.intitule_trb}</td>
           <td>{trb.resp_trb}</td>
-          <td>{responsibleEmployee ? responsibleEmployee.nomComplet : 'N/A'}</td>
+          <td>{responsibleEmployee ? responsibleEmployee.nomComplet : 'aucun'}</td>
           <td>
             <Link to={'/update_tribe/' + trb.id_trb} className="btn btn-info">
               Modifier

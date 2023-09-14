@@ -13,12 +13,15 @@ class AddEquipe extends React.Component{
           resp_eq: '',
           start_eq: '',
           project_run: '',
+          scrum_master:'',
           emp_eq: [],
           data: [],
         };
         this.changeHandler = this.changeHandler.bind(this);
         this.submitted = this.submitted.bind(this);
         this.handleChange = this.handleChange.bind(this);
+       // this.changeHandler_scrum = this.changeHandler_scrum.bind(this); // Lier la fonction changeHandler_scrum
+
       }
 
 
@@ -27,12 +30,27 @@ class AddEquipe extends React.Component{
           [event.target.name]: event.target.value
         });
       }
+
+
+      changeHandler_scrum(event) {
+        
+        this.setState({
+          'scrum_master': event.target.value
+        });
+        console.log("hghghg",this.state)
+      }
+
+
+
+
+
       submitted(event) {
         event.preventDefault(); // Empêche la soumission du formulaire par défaut
       
         const formData = {
           nom_eq: this.state.nom_eq,
           resp_eq: this.state.resp_eq,
+          scrum_master: this.state.scrum_master,
           start_eq: this.state.start_eq,
           project_run: this.state.project_run,
           emp_eq: this.state.emp_eq.map(option => option.value),
@@ -110,14 +128,14 @@ class AddEquipe extends React.Component{
                 value: `${emp.id}`,
                 label: `${emp.nomComplet}`,
             })))
-       // console.log(this.state.selectedOption)
-        // const myData = [
-        //     { text: 'Books', value: 1, label:'opsie' },
-        //     { text: 'Books', value: 2, label:'opsie' },
-        //     { text: 'Books', value: 3, label:'opsie' },
-        //     { text: 'Books', value: 4, label:'opsie' },
 
-        // ];
+            const selects_scrum=empData.map((emp)=>
+            
+            {if(emp.poste === 'scrum_master')
+            return(<option value={emp.id} id={emp.id}>{emp.nomComplet}</option>)}
+        );
+
+
 
         
 
@@ -145,6 +163,14 @@ class AddEquipe extends React.Component{
                        {selects}
                         </select>                   
                     </div>
+
+                    <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
+                        <label htmlFor="scrum_master">Enter un scrum master:</label>
+                        <select  className="form-control" name="scrum_master" onChange={this.changeHandler}  id="scrum_master">
+                        <option value="">Sélectionnez un employée:</option>
+                       {selects_scrum}
+                        </select>                   
+                    </div>                    
 
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="start_eq">Entrer la date de création de l'équipe:</label>

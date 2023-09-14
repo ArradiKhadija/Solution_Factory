@@ -8,7 +8,7 @@ import cx_Oracle
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ('id', 'nomComplet', 'email', 'contact', 'adresse','poste')
+        fields = ('id', 'nomComplet', 'email', 'contact', 'adresse','poste','salaire','statut_emploi')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,6 +30,6 @@ class VacationSerializer(serializers.ModelSerializer):
 class EquipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Equipe
-        fields = ('id_eq', 'nom_eq','resp_eq','start_eq','project_run','emp_eq')
+        fields = ('id_eq', 'nom_eq','resp_eq','start_eq','project_run','emp_eq','scrum_master','ba_eq')
 
 

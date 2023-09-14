@@ -64,11 +64,16 @@ class ListEquipe extends React.Component {
       }
 
       return (
+        
         <tr key={sqd.id_eq}>
+           {/* <p>{JSON.stringify(sqd.scrum_master)}</p>  */}
           <th scope="row">{sqd.id_eq}</th>
           <td>{sqd.nom_eq}</td>
           <td>
             {sqd.resp_eq? (employees.find(e=> e.id === sqd.resp_eq)).nomComplet :'aucun'}
+          </td>
+          <td>
+          {sqd.scrum_master? (employees.find(e=> e.id === parseInt(sqd.scrum_master))?.nomComplet || 'aucun') :'aucun'}
           </td>
           <td>{sqd.start_eq}</td>
           <td>{sqd.project_run}</td>
@@ -100,7 +105,8 @@ class ListEquipe extends React.Component {
               <tr>
                 <th scope="row">Equipe No</th>
                 <th> Nom équipe </th>
-                <th> Responsable </th>
+                <th> Tech Lead </th>
+                <th> Scrum master </th>
                 <th> Date du création </th>
                 <th> Projet en Cours </th>
                 <th> Employées </th>

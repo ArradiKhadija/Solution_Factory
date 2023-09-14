@@ -13,7 +13,8 @@ class Add extends React.Component{
             'contact':'',
             'adresse':'',
             'poste':'',
-            'salaire':''
+            'salaire':parseFloat(''),
+            'statut_emploi':'',
         }
         this.changeHandler= this.changeHandler.bind(this);
         this.submitted= this.submitted.bind(this);
@@ -70,6 +71,7 @@ class Add extends React.Component{
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="poste">Entrer votre poste:</label>
                         <select name="poste" id="poste" onChange={this.changeHandler} className="form-control">
+                            <option value="">Sélectionnez un poste d'emploi:</option>
                             <option value="developpeur">Développeur de logiciels</option>
                             <option value="securite">Ingénieur en sécurité informatique</option>
                             <option value="admin_systeme">Administrateur système</option>
@@ -88,13 +90,22 @@ class Add extends React.Component{
                             <option value="tribes_leading">Tribes Leading</option>
                             <option value="CEO_IT">CEO IT</option>
                         </select>         
-                                  </div>   
+                    </div> 
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
-                        <label htmlFor="salaire">Entrer votre adresse</label>
+                        <label htmlFor="statut_emploi">Entrer le statut d'emploi :</label>
+                        <select name="statut_emploi" id="statut_emploi" onChange={this.changeHandler} className="form-control">
+                            <option value="">Sélectionnez un statut d'emploi:</option>
+                            <option value="stagiaire">stagiaire</option>
+                            <option value="employée permanent">employée permanent</option>
+                            <option value="en période d'essai">en période d'essai</option>                            
+                        </select>         
+                    </div>  
+                    <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
+                        <label htmlFor="salaire">Entrer salaire mensuel du l'employée:</label>
                         <input  name="salaire" type="text" onChange={this.changeHandler} className="form-control" id="salaire" placeholder="10 000 DH"/>
                     </div>                                                    
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
-                        <label htmlFor="adr">Entrer votre adresse</label>
+                        <label htmlFor="adr">Entrer l'adresse du l'employée:</label>
                         <input  name="adresse" type="text" onChange={this.changeHandler} className="form-control" id="adr" placeholder="lotissement Amine / casablanca"/>
                     </div>  
                     <div className="form-group row" style={{  paddingLeft:'200px', paddingRight :'200px',textAlign: 'center'}}>

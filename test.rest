@@ -33,3 +33,21 @@ Content-Type: application/json
             89, 90
         ]
     }
+
+
+
+###
+
+POST http://127.0.0.1:8000/employee/
+Content-Type: application/json
+
+{
+    
+    "nomComplet": "khadija ard",
+    "email": "khadijaarradi01@gmail.com",
+    "contact": "0616320616",
+    "adresse": "sidi gf",
+    "poste": "scrum master",
+    "salaire": 100000.0,
+    "statut_emploi": "stagiaire"
+}

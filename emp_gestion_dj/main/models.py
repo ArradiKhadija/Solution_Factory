@@ -8,7 +8,9 @@ class Employee(models.Model):
     contact = models.CharField(max_length=100)
     adresse = models.TextField()
     poste= models.TextField(null=True)
-    
+    salaire = models.FloatField(null=True)
+    statut_emploi = models.CharField(null=True, max_length=200)
+
 
     def __str__(self):
         return str(self.nomComplet)
@@ -43,6 +45,11 @@ class Equipe(models.Model):
     start_eq = models.DateField(max_length=200, null=True, default="non renseigné")
     project_run = models.CharField(max_length=200, null=True, default="L'équipe vient de débuter récemment")
     emp_eq = models.ManyToManyField(Employee, related_name='equipes', blank=True)
+    scrum_master = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, related_name='scrum_master_equipes')
+    ba_eq = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, related_name='BA_equipes')
+
 
     def __str__(self):
         return self.nom_eq
+
+

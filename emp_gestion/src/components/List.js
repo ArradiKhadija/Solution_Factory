@@ -53,10 +53,12 @@ class List extends React.Component{
         <td> {emp.adresse} </td>
         <td> {emp.poste} </td>
         <td> {emp.salaire} </td>
+        <td> {emp.statut_emploi} </td>
         <td> 
             <Link to={'/update/'+emp.id} className="btn btn-info" > Modifier </Link> 
-            <button onClick={()=>this.deleteEmp(emp.id)} className="btn btn-danger ml-3"> Supprimer </button>   
+            
         </td>
+        <td> <button onClick={()=>this.deleteEmp(emp.id)} className="btn btn-danger ml-3"> Supprimer </button>  </td>
       </tr>
     );
 
@@ -76,8 +78,10 @@ class List extends React.Component{
           <th scope="col">Contact</th>
           <th scope="col">Adresse</th>
           <th scope="col">Poste</th>
-          <th scope="col">Salire en DH</th>
-          <th scope="col">Actions</th>
+          <th scope="col">Salaire en DH</th>
+          <th scope="col">Statut en emploi</th>
+          <th scope="col">Modifier</th>
+          <th scope="col">Supprimer</th>
           
         </tr>
       </thead>

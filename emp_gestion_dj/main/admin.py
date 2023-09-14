@@ -4,7 +4,7 @@ from .models import *
 #here we attach models to admin
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display= ['id','nomComplet','email','contact','adresse','poste']
+    list_display= ['id','nomComplet','email','contact','adresse','poste','salaire','statut_emploi']
 admin.site.register(Employee,EmployeeAdmin)
 
 class VacationAdmin(admin.ModelAdmin):
@@ -16,8 +16,13 @@ class TribeAdmin(admin.ModelAdmin):
 admin.site.register(Tribe,TribeAdmin)
 
 class EquipeAdmin(admin.ModelAdmin):
-    list_display = ['id_eq', 'nom_eq', 'resp_eq', 'start_eq', 'project_run', 'display_emp_eq']
+    list_display = ['id_eq', 'nom_eq', 'resp_eq', 'start_eq', 'project_run', 'display_emp_eq', 'scrum_master', 'ba_eq']
+
     def display_emp_eq(self, obj):
         return ', '.join([emp.nomComplet for emp in obj.emp_eq.all()])
+    
+    
     display_emp_eq.short_description = 'Employees'
-admin.site.register(Equipe, EquipeAdmin)
+    
+
+

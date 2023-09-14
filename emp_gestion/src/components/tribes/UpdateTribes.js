@@ -70,7 +70,7 @@ class UpdateTribes extends React.Component{
         .then((response) => response.json())
         .then((data) => {
         //console.log(data)
-        const leaders = data.filter((item)=>item.poste ==='tribes_leading');
+        const leaders = data.filter((item)=>item.poste ==='Tribes Leading');
         return(leaders)
         })
         .then((data)=>{

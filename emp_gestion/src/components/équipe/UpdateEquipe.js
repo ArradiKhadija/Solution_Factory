@@ -12,6 +12,7 @@ class UpdateEquipe extends React.Component{
             resp_eq: '',
             start_eq: '',
             project_run: '',
+            scrum_master:'',
             emp_eq: [],
             emp:[],
             aa:[]
@@ -40,7 +41,8 @@ class UpdateEquipe extends React.Component{
                 start_eq: data.start_eq,
                 project_run: data.project_run,
                 emp_eq: data.emp_eq, 
-                aa:data.aa
+                aa:data.aa, 
+                scrum_master:data.scrum_master,
               });
               this.setState({ availableEmployees: data.emp });
          // console.log(data.emp_eq)
@@ -123,7 +125,11 @@ class UpdateEquipe extends React.Component{
                                                                             }))
        
     )
-
+    const selects_scrum=empData.map((emp)=>
+            
+    {if(emp.poste === 'scrum_master')
+    return(<option value={emp.id} id={emp.id}>{emp.nomComplet}</option>)}
+);
         //'id_eq', 'nom_eq','resp_eq','start_eq','project_run','emp_eq'
         return(
 
@@ -148,6 +154,13 @@ class UpdateEquipe extends React.Component{
                        {selects}
                         </select>                   
                     </div>
+                    <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
+                        <label htmlFor="scrum_master">Enter un scrum master:</label>
+                        <select  value={this.state.scrum_master} className="form-control" name="scrum_master" onChange={this.changeHandler}  id="scrum_master">
+                        <option value="">Sélectionnez un employée:</option>
+                       {selects_scrum}
+                        </select>                   
+                    </div>                     
 
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="start_eq">Entrer la date de création de l'équipe:</label>

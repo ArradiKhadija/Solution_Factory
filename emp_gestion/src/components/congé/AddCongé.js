@@ -93,7 +93,7 @@ class AddCongé extends React.Component{
                             <option value="Congés de formation">Congés de formation</option>
                             <option value="Congés pour décès ou funérailles">Congés pour décès ou funérailles</option>
                             <option value="Congés sabbatiques">Congés sabbatiques</option>
-                            <option value="Congés fériés">Congés fériés</option>
+                            
                             <option value="Congés de mariage">Congés de mariage</option>
                         </select>
                     </div>
@@ -107,7 +107,7 @@ class AddCongé extends React.Component{
                     </div>
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="duration_vac">Entrer la durée du congé:</label>
-                        <input  name="duration_vac"type="text" onChange={this.changeHandler} className="form-control" id="duration_vac" placeholder="Ne pas dépasser 30 jours"/>
+                        <input  name="duration_vac"type="number" onChange={this.changeHandler} className="form-control" id="duration_vac" placeholder="Ne pas dépasser 30 jours"/>
                     </div>     
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="reason_vac">Entrer une justification ou une raison pour le congé:</label>

@@ -73,7 +73,7 @@ class ListEquipe extends React.Component {
             {sqd.resp_eq? (employees.find(e=> e.id === sqd.resp_eq)).nomComplet :'aucun'}
           </td>
           <td>
-          {sqd.scrum_master? (employees.find(e=> e.id === parseInt(sqd.scrum_master))?.nomComplet || 'aucun') :'aucun'}
+          {sqd.scrum_master? (employees.find(e=> e.id === parseInt(sqd.scrum_master)).nomComplet || 'aucun') :'aucun'}
           </td>
           <td>{sqd.start_eq}</td>
           <td>{sqd.project_run}</td>
@@ -82,13 +82,14 @@ class ListEquipe extends React.Component {
             <Link to={'/update_équipe/' + sqd.id_eq} className="btn btn-info">
               Modifier
             </Link>
-            <button
+
+          </td>
+          <td>            <button
               onClick={() => this.deleteEquipe(sqd.id_eq)}
               className="btn btn-danger ml-3"
             >
               Supprimer
-            </button>
-          </td>
+            </button></td>
         </tr>
       );
     });
@@ -110,7 +111,8 @@ class ListEquipe extends React.Component {
                 <th> Date du création </th>
                 <th> Projet en Cours </th>
                 <th> Employées </th>
-                <th> Actions </th>
+                <th> modifier </th>
+                <th> Supprimer </th>
               </tr>
             </thead>
             <tbody>

@@ -13,7 +13,8 @@ class Update extends React.Component{
             'contact':'',
             'adresse':'',
             'poste':'',
-            'salaire':''
+            'salaire':'',
+            'statut_emploi':'',
         }
         this.changeHandler= this.changeHandler.bind(this);
         this.submitted= this.submitted.bind(this);
@@ -37,6 +38,8 @@ class Update extends React.Component{
             contact:data.contact,
             adresse:data.adresse,
             poste: data.poste,
+            salaire: data.salaire,
+            statut_emploi: data.statut_emploi
           });
           console.log(data)
         });
@@ -66,6 +69,7 @@ class Update extends React.Component{
     }
 
     render(){
+        
         return(
             
             <div>
@@ -88,31 +92,41 @@ class Update extends React.Component{
                         <input onChange={this.changeHandler} value={this.state.contact} name='contact' type="text" className="form-control" id="contact" placeholder="06 16 32 06 16"/>
                     </div>
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
-                        <label htmlFor="contact">Modifer le poste du l'employée</label>
+                        <label htmlFor="poste">Modifer le poste du l'employée</label>
                         <select name="poste" id="poste" onChange={this.changeHandler}  value={this.state.poste} className="form-control">
-                            <option value="developpeur">Développeur de logiciels</option>
-                            <option value="securite">Ingénieur en sécurité informatique</option>
+                        <option value="">Sélectionnez un poste d'emploi:</option>
+                            <option value="Développeur de logiciels">Développeur de logiciels</option>
+                            <option value="Ingénieur en sécurité informatique">Ingénieur en sécurité informatique</option>
                             <option value="admin_systeme">Administrateur système</option>
-                            <option value="qa">Analyste en assurance qualité (QA)</option>
-                            <option value="architecte">Architecte de solutions</option>
-                            <option value="analyste_data">Analyste de données</option>
-                            <option value="ingenieur_reseau">Ingénieur réseau</option>
-                            <option value="dev_mobile">Développeur d'applications mobiles</option>
-                            <option value="admin_bdd">Administrateur de bases de données</option>
-                            <option value="cloud_expert">Expert en cloud computing</option>
+                            <option value="Analyste en assurance qualité">Analyste en assurance qualité (QA)</option>
+                            <option value="Architecte de solutions">Architecte de solutions</option>
+                            <option value="Analyste de données">Analyste de données</option>
+                            <option value="Ingénieur Réseau">Ingénieur réseau</option>
+                            <option value="Développeur d'applications mobiles">Développeur d'applications mobiles</option>
+                            <option value="Administrateur de bases de données">Administrateur de bases de données</option>
+                            <option value="Expert en cloud computing">Expert en cloud computing</option>
                             <option value="scrum_master">Scrum Master</option>
-                            <option value="support_technique">Spécialiste en support technique</option>
-                            <option value="devops">Ingénieur DevOps</option>
-                            <option value="consultant_ti">Consultant en TI</option>
-                            <option value="data_scientist">Data Scientist</option>
-                            <option value="tribes_leading">Tribes Leading</option>
-                            <option value="CEO_IT">CEO IT</option>
+                            <option value="Spécialiste en support technique">Spécialiste en support technique</option>
+                            <option value="Ingénieur DevOps">Ingénieur DevOps</option>
+                            <option value="Consultant en TI">Consultant en TI</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="Tribes Leading">Tribes Leading</option>
+                            <option value="CEO IT">CEO IT</option>
                         </select>                    </div>     
 
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
-                        <label htmlFor="salaire">Entrer votre adresse</label>
+                        <label htmlFor="salaire">Entrer le salaire mensuel</label>
                         <input value={this.state.salaire} name="salaire" type="text" onChange={this.changeHandler} className="form-control" id="salaire" placeholder="10 000 DH"/>
                     </div>
+                    <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
+                        <label htmlFor="statut_emploi">Entrer le statut d'emploi :</label>
+                        <select name="statut_emploi" value={this.state.statut_emploi} id="statut_emploi" onChange={this.changeHandler} className="form-control">
+                            <option value="">Sélectionnez un statut d'emploi:</option>
+                            <option value="stagiaire">stagiaire</option>
+                            <option value="employée permanent">employée permanent</option>
+                            <option value="en période d'essai">en période d'essai</option>                            
+                        </select>         
+                    </div>                    
 
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="adr">Modifer l'adresse' du l'employée</label>

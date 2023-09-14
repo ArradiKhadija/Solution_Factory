@@ -60,7 +60,7 @@ class ListTribes extends React.Component{
     .then((response) => response.json())
     .then((data) => {
     //console.log(data)
-    const leaders = data.filter((item)=>item.poste ==='tribes_leading');
+    const leaders = data.filter((item)=>item.poste ==='Tribes Leading');
     return(leaders)
     })
     .then((data)=>{
@@ -76,18 +76,19 @@ class ListTribes extends React.Component{
   render(){
     //{this.nomComplet(trb.resp_trb)}
 
-
+    
     const trbData = this.state.data;
-    const responsable = this.state.resp; // Assuming resp is an array of responsible employees
+    const responsable = this.state.resp; 
     
     const rows = trbData.map((trb) => {
-      const responsibleEmployee = responsable.find((emp) => emp.id === trb.resp_trb);
-    
+      const responsibleEmployee = responsable.find((emp) =>emp.id  === parseInt(trb.resp_trb));
+   // console.log('tttt',responsable)
       return (
         <tr key={trb.id_trb}>
           <th scope="row">{trb.id_trb}</th>
           <td>{trb.intitule_trb}</td>
           <td>{trb.resp_trb}</td>
+          
           <td>{responsibleEmployee ? responsibleEmployee.nomComplet : 'aucun'}</td>
           <td>
             <Link to={'/update_tribe/' + trb.id_trb} className="btn btn-info">

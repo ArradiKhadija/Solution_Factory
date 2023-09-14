@@ -72,23 +72,23 @@ class Add extends React.Component{
                         <label htmlFor="poste">Entrer votre poste:</label>
                         <select name="poste" id="poste" onChange={this.changeHandler} className="form-control">
                             <option value="">Sélectionnez un poste d'emploi:</option>
-                            <option value="developpeur">Développeur de logiciels</option>
-                            <option value="securite">Ingénieur en sécurité informatique</option>
+                            <option value="Développeur de logiciels">Développeur de logiciels</option>
+                            <option value="Ingénieur en sécurité informatique">Ingénieur en sécurité informatique</option>
                             <option value="admin_systeme">Administrateur système</option>
-                            <option value="qa">Analyste en assurance qualité (QA)</option>
-                            <option value="architecte">Architecte de solutions</option>
-                            <option value="analyste_data">Analyste de données</option>
-                            <option value="ingenieur_reseau">Ingénieur réseau</option>
-                            <option value="dev_mobile">Développeur d'applications mobiles</option>
-                            <option value="admin_bdd">Administrateur de bases de données</option>
-                            <option value="cloud_expert">Expert en cloud computing</option>
+                            <option value="Analyste en assurance qualité">Analyste en assurance qualité (QA)</option>
+                            <option value=">Architecte de solutions">Architecte de solutions</option>
+                            <option value="Analyste de données">Analyste de données</option>
+                            <option value="Ingénieur Réseau">Ingénieur réseau</option>
+                            <option value="Développeur d'applications mobiles">Développeur d'applications mobiles</option>
+                            <option value="Administrateur de bases de données">Administrateur de bases de données</option>
+                            <option value="Expert en cloud computing">Expert en cloud computing</option>
                             <option value="scrum_master">Scrum Master</option>
-                            <option value="support_technique">Spécialiste en support technique</option>
-                            <option value="devops">Ingénieur DevOps</option>
-                            <option value="consultant_ti">Consultant en TI</option>
-                            <option value="data_scientist">Data Scientist</option>
-                            <option value="tribes_leading">Tribes Leading</option>
-                            <option value="CEO_IT">CEO IT</option>
+                            <option value="Spécialiste en support technique">Spécialiste en support technique</option>
+                            <option value="Ingénieur DevOps">Ingénieur DevOps</option>
+                            <option value="Consultant en TI">Consultant en TI</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="Tribes Leading">Tribes Leading</option>
+                            <option value="CEO IT">CEO IT</option>
                         </select>         
                     </div> 
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
@@ -102,7 +102,7 @@ class Add extends React.Component{
                     </div>  
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="salaire">Entrer salaire mensuel du l'employée:</label>
-                        <input  name="salaire" type="text" onChange={this.changeHandler} className="form-control" id="salaire" placeholder="10 000 DH"/>
+                        <input  name="salaire" type="number" onChange={this.changeHandler} className="form-control" id="salaire" placeholder="10 000 DH"/>
                     </div>                                                    
                     <div className="form-group"style={{marginLeft:'50px', marginRight :'50px'}}>
                         <label htmlFor="adr">Entrer l'adresse du l'employée:</label>

@@ -17,7 +17,7 @@ class Signup extends Component {
         this.setState({ [name]: value });
     };
 
-    handleSubmit = event => {
+    submitted = event => {
         event.preventDefault();
 
         const { username, password, email } = this.state;
@@ -30,20 +30,10 @@ class Signup extends Component {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Success:', data);
-            // You can add additional actions here upon successful signup
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Handle errors here
-        });
+        //Redirection vers la page racine
+        this.props.history.push('/');
+        //Rafraîchir la page après la redirection
+        window.location.reload()
     };
 
     render() {
@@ -55,9 +45,9 @@ class Signup extends Component {
             <img src="no_bg.png" style={{width: '185px',height:'150px'}} alt="logo"/>
                 <h4>Formulaire d'Inscription du Nouveau Membre de l'Équipe des Ressources Humaines:</h4>
                 <br/>
-                    <form onSubmit={this.handleSubmit} className="table table-striped table-bordered text-center">
+                    <form onSubmit={this.submitted} className="table table-striped table-bordered text-center">
                     <div className="form-group" style={{marginLeft:'50px', marginRight :'50px'}}>
-                        <label htmlFor="username">Entrer votre nom complet:</label>
+                        <label htmlFor="username">Entrer votre Username:</label>
                         <input  name="username" type="text" onChange={this.changeHandler} className="form-control" id="username"/>
                     </div>
 
@@ -76,7 +66,8 @@ class Signup extends Component {
                     <div className="d-flex justify-content-between">
                         <div className="form-group row">
                             <div className="col-sm-10">                                
-                                <Link className="btn btn-primary" to="/">Compléter l'inscription<span className="sr-only">(current)</span></Link>
+                                {/* <Link className="btn btn-primary" to="/">Compléter l'inscription<span className="sr-only">(current)</span></Link> */}
+                                <button className="btn btn-primary" type='submit' >Completer l'inscription</button>
                             </div>
                         </div>
                         <Link className="nav-link" to="/">Retourne vers login<span className="sr-only">(current)</span></Link>

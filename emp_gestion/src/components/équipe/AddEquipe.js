@@ -102,7 +102,7 @@ class AddEquipe extends React.Component{
         .then((response) => response.json())
         .then((data) => {
         //console.log(data)
-        const emp = data.filter((item)=>item.poste !=='Tech Lead');
+        const emp = data.filter((item)=>item.poste !=='Tribes Leading');
         return(emp)
         })
         .then((data)=>{
@@ -123,7 +123,9 @@ class AddEquipe extends React.Component{
 
         const dataEmp = this.state.data
         console.log(dataEmp)
-        const employees = dataEmp.map(((emp)=>({
+        const selects_emp = empData.filter(e =>( e.poste !== 'Tribes Leading')&& (e.poste !== 'scrum_master') ).flatMap(e => e);
+
+        const employees = selects_emp.map(((emp)=>({
                 text: `${emp.id}`,
                 value: `${emp.id}`,
                 label: `${emp.nomComplet}`,
@@ -136,6 +138,8 @@ class AddEquipe extends React.Component{
         );
 
 
+     //  console.log("no tribes ld", selects_emp);
+        
 
         
 
@@ -192,7 +196,7 @@ class AddEquipe extends React.Component{
                     value={this.state.emp_eq}
                     />
 
-                    <p>{JSON.stringify(this.state.emp_eq)}</p>
+                    {/* <p>{JSON.stringify(employees)}</p> */}
                      <br/>                                                                
                         </div> 
                                                       
